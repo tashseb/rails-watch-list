@@ -12,4 +12,20 @@
       <p><%= link_to 'Add Movie', new_list_bookmark_path(@list), class: 'btn btn-outline-success'%></p>
     </div>
   </div>
+  <div class="row justify-content-between pt-3">
+      <div class="col-4">
+        <% @list.bookmarks.each do |bookmark| %>
+          <div class="card" style="width: 18rem;">
+            <%= image_tag "https://loremflickr.com/520/240/#{bookmark.comment}" %>
+            <div class="card-body">
+              <%# <h5 class="card-title"><%= link_to list.name, list_path(list) %>
+              <p><strong><%= bookmark.movie.title %></strong></p>
+              <p><%= bookmark.movie.overview %></p>
+              <p><em>"<%= bookmark.comment %>"</em></p>
+              <%= link_to 'Delete', bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'card-action card-edit' %>
+            </div>
+          </div>
+        <% end  %>
+      </div>
+  </div>
 </div>
