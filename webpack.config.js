@@ -7,6 +7,11 @@ module.exports = {
   entry: {
     application: "./app/javascript/application.js"
   },
+  content: [
+    './app/helpers/**/*.rb',
+    './app/javascript/**/*.js',
+    './app/views/**/*',
+  ],
   output: {
     filename: "[name].js",
     sourceMapFilename: "[file].map",
