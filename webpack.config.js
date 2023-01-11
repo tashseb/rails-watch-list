@@ -7,16 +7,16 @@ module.exports = {
   entry: {
     application: "./app/javascript/application.js"
   },
-  content: [
-    './app/helpers/**/*.rb',
-    './app/javascript/**/*.js',
-    './app/views/**/*',
-  ],
   output: {
     filename: "[name].js",
     sourceMapFilename: "[file].map",
     path: path.resolve(__dirname, "app/assets/builds"),
   },
+  content: [
+    './app/helpers/**/*.rb',
+    './app/javascript/**/*.js',
+    './app/views/**/*',
+  ],
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1
