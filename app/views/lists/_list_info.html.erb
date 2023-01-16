@@ -1,0 +1,14 @@
+<div class="watch-list-card">
+  <%= image_tag list.image_url %>
+  <div class="watch-list-info">
+    <h2><%= list.title %><small> (<%= list.year %>)</small></h2>
+    <button aria-label="Edit list">
+      <i class="fa-solid fa-pen fa-xs ml-2"></i>
+    </button>
+  </div>
+  <%= simple_form_for list, html: {class: "d-none"} do |f| %>
+    <%= f.input :title %>
+    <%= f.input :year %>
+    <%= f.submit "Update list", class: "btn btn-sm btn-primary btn-block mt-2" %>
+  <% end %>
+</div>
