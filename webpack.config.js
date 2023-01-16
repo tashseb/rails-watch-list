@@ -12,6 +12,11 @@ module.exports = {
     sourceMapFilename: "[file].map",
     path: path.resolve(__dirname, "app/assets/builds"),
   },
+  content: [
+    './app/helpers/**/*.rb',
+    './app/javascript/**/*.js',
+    './app/views/**/*',
+  ],
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1
