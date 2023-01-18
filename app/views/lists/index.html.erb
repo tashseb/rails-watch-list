@@ -1,11 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-    </div>
+<div class="container mt-3">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <% @lists.each do |list| %>
+      <div class="col">
+        <%= render "list_info", list: list %>
+      </div>
+    <% end  %>
   </div>
-</div>
-<div class="watch_list">
-  <% @lists.each do |list| %>
-    <%= render "list_info", list: list %>
-  <% end  %>
 </div>
