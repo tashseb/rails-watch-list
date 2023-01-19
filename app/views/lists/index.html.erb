@@ -1,17 +1,11 @@
-<div class="list_container">
-  <div class="">
-    <p>Where am I?</p>
-  </div>
-</div>
-<div class="">
-  <% @lists.each do |list| %>
-    <div class="" style="width: 18rem;">
-      <div class="" style="height: 300px; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : "https://loremflickr.com/520/240/#{list.name}" %>)">
-      </div>
-      <div class="">
-        <div class=""><%= link_to list.name, list_path(list) %>
+<div class="container mt-3">
+  <div class="d-flex justify-content-center">
+    <div class="row gap-3">
+      <% @lists.each do |list| %>
+        <div class="col">
+          <%= render "list_info", list: list %>
         </div>
-      </div>
+      <% end  %>
     </div>
-  <% end  %>
+  </div>
 </div>
