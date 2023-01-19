@@ -1,0 +1,9 @@
+<div class="card h-100" style="width: 15rem;">
+  <%= image_tag bookmark.movie.poster_url %>
+  <div class="card-body">
+    <p><strong><%= bookmark.movie.title %></strong></p>
+    <p><%= bookmark.movie.overview %></p>
+    <p><em>"<%= bookmark.comment %>"</em></p>
+    <%= link_to 'Delete', bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'card-action card-edit' %>
+  </div>
+</div>
