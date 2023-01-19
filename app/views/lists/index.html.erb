@@ -1,12 +1,11 @@
-<div class="d-grid gap-2 d-md-flex justify-content-md-end px-2 pt-3">
-  <%= link_to 'New Watch List', new_list_path, class: 'btn btn-outline-success'%>
-</div>
-<div class="container mt-2">
-  <div class="row d-flex">
-    <% @lists.each do |list| %>
-      <div class="col">
-        <%= render "list_info", list: list %>
-      </div>
-    <% end  %>
+<div class="container mt-3">
+  <div class="d-flex justify-content-center">
+    <div class="row gap-3">
+      <% @lists.each do |list| %>
+        <div class="col">
+          <%= render "list_info", list: list %>
+        </div>
+      <% end  %>
+    </div>
   </div>
 </div>
