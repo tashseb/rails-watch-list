@@ -1,9 +1,21 @@
-<div class="card h-100" style="width: 15rem;">
+<div class="card h-100" style="width: 20rem;">
   <%= image_tag bookmark.movie.poster_url %>
   <div class="card-body">
-    <p><strong><%= bookmark.movie.title %></strong></p>
-    <p><%= bookmark.movie.overview %></p>
-    <p><em>"<%= bookmark.comment %>"</em></p>
-    <%= link_to 'Delete', bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'card-action card-edit' %>
+    <div class="fw-bold fs-5">
+      <%= bookmark.movie.title %>
+    </div>
+    <div class="lh-sm fs-lighter text-truncate py-1">
+      <%= bookmark.movie.overview %>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div class="text-muted fst-italic">
+        <%= bookmark.comment %>
+      </div>
+      <div class="ms-1">
+        <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'card-action card-edit' do %>
+          <i class="fa-solid fa-trash-can" style="color:#B00E2E;"></i>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
