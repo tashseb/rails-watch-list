@@ -23,7 +23,7 @@ response['results'].each do |movie_hash|
     poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
     title: movie_hash['title'],
     overview: movie_hash['overview'],
-    rating: rand(1.0..10.0).round(1)
+    rating: rand(1.0..15.0).round(1)
   )
 
   # Movie.create(title: "Wonder Woman 1984", overview: "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s", poster_url: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", rating: 6.9)
